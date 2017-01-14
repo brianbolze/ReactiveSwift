@@ -1528,7 +1528,7 @@ class SignalSpec: QuickSpec {
 
 			it("doesn't extend the lifetime of the throttle property") {
 				var completed = false
-				shouldThrottle.lifetime.ended.observeCompleted { completed = true }
+				shouldThrottle.lifetime.observeEnded { completed = true }
 
 				observer.send(value: 1)
 				shouldThrottle = nil
